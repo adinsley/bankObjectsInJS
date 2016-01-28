@@ -146,10 +146,10 @@ it('Can I get it to return the amount for a particular account ', function(){
 
   rosyth.payInterest();
 
-  var insley = rosyth.findAccount("Insley");
+  var insley = rosyth.findAccount("Cora");
 
  
-  assert.equal(55, insley.cash);
+  assert.equal(157.5, insley.cash);
 });
 
 })
