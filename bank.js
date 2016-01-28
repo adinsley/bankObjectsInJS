@@ -57,7 +57,18 @@ Bank.prototype ={
     }
       return deposits;
   },
-}
+  payInterest:function(){
+    for(account of this.accounts){
+      if(account.type === "Student"){
+        account.cash += (account.cash*0.1);
+      }else if(account.type === "Business"){
+        account.cash += (account.cash*0.05);
+      }else if(account.type === "Personal")
+        account.cash += (account.cash * 0);
+    }//end of loop
+  },//end of function
+
+}// end of Bank.prototype
 
 
 

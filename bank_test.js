@@ -129,5 +129,27 @@ it('Can I get it to return the amount for a particular account ', function(){
   
   assert.equal(100, rosyth.totalOfType("Personal"));
 });
+//Test paying interest//
+it('Can I get it to return the amount for a particular account ', function(){
+  var rosyth = new Bank('Rosyth Royal')
+  var account1 = new Account("Insley", "Student");
+  var account2 = new Account("Carrie", "Personal");
+  var account3 = new Account("Cora", "Business");
+
+  rosyth.add_account(account1);
+  rosyth.add_account(account2);
+  rosyth.add_account(account3);
+  
+  account1.deposit(50);
+  account2.deposit(100);
+  account3.deposit(150);
+
+  rosyth.payInterest();
+
+  var insley = rosyth.findAccount("Insley");
+
+ 
+  assert.equal(55, insley.cash);
+});
 
 })
